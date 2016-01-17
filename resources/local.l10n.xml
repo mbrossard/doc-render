@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format" version="1.0">
+
+  <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+    <l:l10n language="en">
+      <l:context name="xref">
+	    <l:template name="page.citation" text=" on page&#160;%p"/>
+      </l:context>
+      <l:context name="xref-number">
+	    <l:template name="appendix" text="&#8220;%t&#8221;"/>
+	    <l:template name="chapter" text="&#8220;%t&#8221;"/>
+	    <l:template name="section" text="&#8220;%t&#8221;"/>	
+      </l:context>
+      <l:context name="xref-number-and-title">
+	    <l:template name="appendix" text="&#8220;%t&#8221;"/>
+	    <l:template name="chapter" text="&#8220;%t&#8221;"/>
+	    <l:template name="section" text="&#8220;%t&#8221;"/>	
+      </l:context>
+      <l:gentext key="Edition" text=""/>
+      <l:gentext key="TableofContents" text="Contents"/>
+      <l:gentext key="tableofcontents" text="Contents"/>
+    </l:l10n>
+  </l:i18n>
+</xsl:stylesheet>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->
