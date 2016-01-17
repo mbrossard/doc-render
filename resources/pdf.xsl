@@ -5,6 +5,9 @@
   <!-- The local path to DocBook FO stylesheets -->
   <xsl:import href="docbook-xsl/fo/profile-docbook.xsl"/>
 
+  <xsl:import href="lib/defines.xsl"/>
+  <xsl:import href="lib/defines-pdf.xsl"/>
+
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
 Local variables:
