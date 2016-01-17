@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookinfo xml:id="test" xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <title>Test Book</title>
+  <subtitle>It's only a test</subtitle>
+
+  <authorgroup>
+    <corpauthor>
+      Mathias Brossard
+    </corpauthor>
+  </authorgroup>
+
+  <pubdate>2016-01-14</pubdate>
+
+  <copyright id="copyright">
+    <year>2016</year>
+    <holder>Mathias Brossard</holder>
+  </copyright>
+
+  <legalnotice>
+    <para>Copyright 2016 Mathias Brossard</para>
+
+    <para>All rights reserved.</para>
+  </legalnotice>
+
+  <revhistory>
+    <revision>
+      <revnumber>1.0</revnumber>
+      <date>2016-01-14</date>
+      <revremark>Ongoing Release</revremark>
+    </revision>
+  </revhistory>
+
+  <abstract>
+    <para>This book is just a test.</para>
+  </abstract>
+
+</bookinfo>
