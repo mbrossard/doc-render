@@ -4,6 +4,7 @@
 
   <!-- The local path to DocBook FO stylesheets -->
   <xsl:import href="docbook-xsl/fo/profile-docbook.xsl"/>
+  <xsl:import href="docbook-xsl/fo/titlepage.templates.xsl"/>
 
   <xsl:import href="lib/defines.xsl"/>
   <xsl:import href="lib/defines-pdf.xsl"/>
