@@ -11,7 +11,7 @@
 
   <pubdate>2016-01-14</pubdate>
 
-  <copyright id="copyright">
+  <copyright xml:id="copyright">
     <year>2016</year>
     <holder>Mathias Brossard</holder>
   </copyright>
