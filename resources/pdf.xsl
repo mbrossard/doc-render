@@ -7,7 +7,9 @@
   <xsl:import href="docbook-xsl/fo/titlepage.templates.xsl"/>
 
   <xsl:import href="lib/defines.xsl"/>
+  <xsl:import href="lib/defines-a4.xsl"/>
   <xsl:import href="lib/defines-pdf.xsl"/>
+  <xsl:import href="lib/titlepage-a4.xsl"/>
 
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
