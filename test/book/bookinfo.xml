@@ -22,8 +22,13 @@
     <para>All rights reserved.</para>
 
     <para>This book is licensed under a <xref linkend="CC"/>.</para>
+
+    <para>Computer instructions may be extracted from the book under the
+    <xref linkend="MIT"/>.</para>
+
   </legalnotice>
 
+  <!--
   <revhistory>
     <revision>
       <revnumber>1.0</revnumber>
@@ -31,6 +36,7 @@
       <revremark>Ongoing Release</revremark>
     </revision>
   </revhistory>
+  -->
 
   <abstract>
     <para>This book is just a test.</para>
