@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glossary xml:id="glossary" xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <title>Glossary</title>
+
+  <glossdiv>
+    <title>Acronyms</title>
+
+    <glossentry id="gANSI">
+      <glossterm>
+        <acronym>ANSI</acronym>
+      </glossterm>
+      <glossdef>
+        <para>American National Standards Institute</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gAPI">
+      <glossterm>
+        <acronym>API</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Application Programming Interface</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gASCII">
+      <glossterm>
+        <acronym>ASCII</acronym>
+      </glossterm>
+      <glossdef>
+        <para>American Standard Code for Information Interchange</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gASN">
+      <glossterm>
+        <acronym>ASN</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Abstract Syntax Notation</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gBER">
+      <glossterm>
+        <acronym>BER</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Basic Encoding Rules</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gCD">
+      <glossterm>
+        <acronym>CD</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Compact Disk</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gCMS">
+      <glossterm>
+        <acronym>CMS</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Cryptographic Message Syntax</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gCPU">
+      <glossterm>
+        <acronym>CPU</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Central Processing Unit</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gCSS">
+      <glossterm>
+        <acronym>CSS</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Cascading Style Sheets</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gDER">
+      <glossterm>
+        <acronym>DER</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Distinguished Encoding Rules</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gDES">
+      <glossterm>
+        <acronym>DES</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Data Encryption Standard</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gGPL">
+      <glossterm>
+        <acronym>GPL</acronym>
+      </glossterm>
+      <glossdef>
+        <para>General Public License</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gHTML">
+      <glossterm>
+        <acronym>HTML</acronym>
+      </glossterm>
+      <glossdef>
+        <para>HyperText Markup Language</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gHTTP">
+      <glossterm>
+        <acronym>HTTP</acronym>
+      </glossterm>
+      <glossdef>
+        <para>HyperText Transfer Protocol</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gHTTPS">
+      <glossterm>
+        <acronym>HTTPS</acronym>
+      </glossterm>
+      <glossdef>
+        <para>HyperText Transfer Protocol Secured</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gJPEG">
+      <glossterm>
+        <acronym>JPEG</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Joint Photographic Experts Group</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gPGP">
+      <glossterm>
+        <acronym>PGP</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Pretty Good Privacy</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gPNG">
+      <glossterm>
+        <acronym>PNG</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Portable Network Graphics</para>
+      </glossdef>
+    </glossentry>
+    <glossentry id="gRFC">
+      <glossterm>
+        <acronym>RFC</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Request For Comments</para>
+      </glossdef>
+    </glossentry>
+    <glossentry id="gSQL">
+      <glossterm>
+        <acronym>SQL</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Structured Query Language</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gSSH">
+      <glossterm>
+        <acronym>SSH</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Secure SHell</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gSSL">
+      <glossterm>
+        <acronym>SSL</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Secure Sockets Layer</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gSVG">
+      <glossterm>
+        <acronym>SVG</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Scalable Vector Graphics</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gTCP">
+      <glossterm>
+        <acronym>TCP</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Transmission Control Protocol</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gTLS">
+      <glossterm>
+        <acronym>TLS</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Transport Layer Security</para>
+      </glossdef>
+    </glossentry>
+    <glossentry id="gURL">
+      <glossterm>
+        <acronym>URL</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Uniform Resource Locator</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gUSB">
+      <glossterm>
+        <acronym>USB</acronym>
+      </glossterm>
+      <glossdef>
+        <para>Universal Serial Bus</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gW3C">
+      <glossterm>
+        <acronym>W3C</acronym>
+      </glossterm>
+      <glossdef>
+        <para>World Wide Web Consortium</para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gWWW">
+      <glossterm>
+        <acronym>WWW</acronym>
+      </glossterm>
+      <glossdef>
+        <para>World Wide Web</para>
+      </glossdef>
+    </glossentry>
+  </glossdiv>
+
+</glossary>
