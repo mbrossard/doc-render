@@ -249,24 +249,32 @@
   <!-- Publishing Date -->
   <xsl:template match="d:pubdate" mode="common.titlepage.verso.auto.mode">
     <fo:block xsl:use-attribute-sets="verso.style">
-      <xsl:text>Release Date: </xsl:text>
-      <xsl:call-template name="svn.escape">
-	<xsl:with-param name="node">
+      <!--
+          <xsl:text>Release Date: </xsl:text>
+          <xsl:call-template name="svn.escape">
+	      <xsl:with-param name="node">
+      -->
 	  <xsl:apply-templates/>
-	</xsl:with-param>
-      </xsl:call-template>
+      <!--
+	      </xsl:with-param>
+          </xsl:call-template>
+      -->
     </fo:block>
   </xsl:template>
 
   <!-- Edition -->
   <xsl:template match="d:edition" mode="common.titlepage.verso.auto.mode">
     <fo:block xsl:use-attribute-sets="verso.style">
-      <xsl:text>Revision: </xsl:text>
-      <xsl:call-template name="svn.escape">
-	<xsl:with-param name="node">
+      <!--
+          <xsl:text>Revision: </xsl:text>
+          <xsl:call-template name="svn.escape">
+	      <xsl:with-param name="node">
+      -->
 	  <xsl:apply-templates/>
-	</xsl:with-param>
-      </xsl:call-template>
+      <!--
+	      </xsl:with-param>
+          </xsl:call-template>
+      -->
     </fo:block>
   </xsl:template>
 
