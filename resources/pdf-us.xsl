@@ -14,6 +14,7 @@
   <xsl:import href="lib/style.xsl"/>
   <xsl:import href="lib/headers-footers.xsl"/>
   <xsl:import href="lib/titlepage-us.xsl"/>
+  <xsl:import href="lib/tables.xsl"/>
 
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
