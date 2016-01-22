@@ -19,77 +19,94 @@
 
     <xsl:variable name="bgcolor.pi">
       <xsl:choose>
-        <xsl:when test="ancestor::d:thead">#dddddd</xsl:when>
+        <xsl:when test="ancestor::d:thead and $table.head.bg.color !=''">
+          <xsl:value-of select="$table.head.bg.color"/>
+        </xsl:when>
+        <xsl:otherwise></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="textcolor.pi">
+      <xsl:choose>
+        <xsl:when test="ancestor::d:thead and $table.head.text.color !=''">
+          <xsl:value-of select="$table.head.text.color"/>
+        </xsl:when>
         <xsl:otherwise></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
 
     <xsl:choose>
       <xsl:when test="ancestor::d:tgroup">
-	<xsl:if test="$bgcolor.pi != ''">
-	  <xsl:attribute name="background-color">
-	    <xsl:value-of select="$bgcolor.pi"/>
-	  </xsl:attribute>
-	</xsl:if>
-	
-	<xsl:if test="$rowsep.inherit &gt; 0">
-	  <xsl:call-template name="border">
-	    <xsl:with-param name="side" select="'bottom'"/>
-	  </xsl:call-template>
-	</xsl:if>
+	    <xsl:if test="$bgcolor.pi != ''">
+	      <xsl:attribute name="background-color">
+	        <xsl:value-of select="$bgcolor.pi"/>
+	      </xsl:attribute>
+	    </xsl:if>
 
-	<xsl:if test="$colsep.inherit &gt; 0 and 
-	  $col &lt; ancestor::d:tgroup/@cols">
-	  <xsl:call-template name="border">
-	    <xsl:with-param name="side" select="'right'"/>
-	  </xsl:call-template>
-	</xsl:if>
+	    <xsl:if test="$textcolor.pi != ''">
+	      <xsl:attribute name="color">
+	        <xsl:value-of select="$textcolor.pi"/>
+	      </xsl:attribute>
+	    </xsl:if>
+
+	    <xsl:if test="$rowsep.inherit &gt; 0">
+	      <xsl:call-template name="border">
+	        <xsl:with-param name="side" select="'bottom'"/>
+	      </xsl:call-template>
+	    </xsl:if>
+
+	    <xsl:if test="$colsep.inherit &gt; 0 and 
+	                  $col &lt; ancestor::d:tgroup/@cols">
+	      <xsl:call-template name="border">
+	        <xsl:with-param name="side" select="'right'"/>
+	      </xsl:call-template>
+	    </xsl:if>
 	
-	<xsl:if test="$valign.inherit != ''">
-	  <xsl:attribute name="display-align">
+	    <xsl:if test="$valign.inherit != ''">
+	      <xsl:attribute name="display-align">
+	        <xsl:choose>
+	          <xsl:when test="$valign.inherit='top'">before</xsl:when>
+	          <xsl:when test="$valign.inherit='middle'">center</xsl:when>
+	          <xsl:when test="$valign.inherit='bottom'">after</xsl:when>
+	          <xsl:otherwise>
+		        <xsl:message>
+		          <xsl:text>Unexpected valign value: </xsl:text>
+		          <xsl:value-of select="$valign.inherit"/>
+		          <xsl:text>, center used.</xsl:text>
+		        </xsl:message>
+		        <xsl:text>center</xsl:text>
+	          </xsl:otherwise>
+	        </xsl:choose>
+	      </xsl:attribute>
+	    </xsl:if>
+	
 	    <xsl:choose>
-	      <xsl:when test="$valign.inherit='top'">before</xsl:when>
-	      <xsl:when test="$valign.inherit='middle'">center</xsl:when>
-	      <xsl:when test="$valign.inherit='bottom'">after</xsl:when>
-	      <xsl:otherwise>
-		<xsl:message>
-		  <xsl:text>Unexpected valign value: </xsl:text>
-		  <xsl:value-of select="$valign.inherit"/>
-		  <xsl:text>, center used.</xsl:text>
-		</xsl:message>
-		<xsl:text>center</xsl:text>
-	      </xsl:otherwise>
+	      <xsl:when test="$align.inherit = 'char' and $char.inherit != ''">
+	        <xsl:attribute name="text-align">
+	          <xsl:value-of select="$char.inherit"/>
+	        </xsl:attribute>
+	      </xsl:when>
+	      <xsl:when test="$align.inherit != ''">
+	        <xsl:attribute name="text-align">
+	          <xsl:value-of select="$align.inherit"/>
+	        </xsl:attribute>
+	      </xsl:when>
 	    </xsl:choose>
-	  </xsl:attribute>
-	</xsl:if>
-	
-	<xsl:choose>
-	  <xsl:when test="$align.inherit = 'char' and $char.inherit != ''">
-	    <xsl:attribute name="text-align">
-	      <xsl:value-of select="$char.inherit"/>
-	    </xsl:attribute>
-	  </xsl:when>
-	  <xsl:when test="$align.inherit != ''">
-	    <xsl:attribute name="text-align">
-	      <xsl:value-of select="$align.inherit"/>
-	    </xsl:attribute>
-	  </xsl:when>
-	</xsl:choose>
       </xsl:when>
       <xsl:otherwise>
-	<!-- HTML table -->
-	<xsl:variable name="border" 
-	  select="(ancestor::d:table |
-	  ancestor::d:informaltable)[last()]/@border"/>
-	<xsl:if test="$border != '' and $border != 0">
-	  <xsl:attribute name="border">
-	    <xsl:value-of select="$table.cell.border.thickness"/>
-	    <xsl:text> </xsl:text>
-	    <xsl:value-of select="$table.cell.border.style"/>
-	    <xsl:text> </xsl:text>
-	    <xsl:value-of select="$table.cell.border.color"/>
-	  </xsl:attribute>
-	</xsl:if>
+	    <!-- HTML table -->
+	    <xsl:variable name="border" 
+	                  select="(ancestor::d:table |
+	                          ancestor::d:informaltable)[last()]/@border"/>
+	    <xsl:if test="$border != '' and $border != 0">
+	      <xsl:attribute name="border">
+	        <xsl:value-of select="$table.cell.border.thickness"/>
+	        <xsl:text> </xsl:text>
+	        <xsl:value-of select="$table.cell.border.style"/>
+	        <xsl:text> </xsl:text>
+	        <xsl:value-of select="$table.cell.border.color"/>
+	      </xsl:attribute>
+	    </xsl:if>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -100,13 +117,14 @@
       <xsl:value-of select="$body.font.master * 0.9"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>
-    <xsl:attribute name="color">#000000</xsl:attribute>
+    <xsl:attribute name="color">
+      <xsl:value-of select="$table.cell.text.color"/>
+    </xsl:attribute>
 
     <xsl:if test="ancestor::d:thead">
       <xsl:attribute name="font-weight">bold</xsl:attribute>
       <xsl:attribute name="text-align">center</xsl:attribute>
     </xsl:if>
-
   </xsl:template>
 
   <!-- -->
