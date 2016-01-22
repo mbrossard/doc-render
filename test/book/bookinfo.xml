@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookinfo xml:id="test" xmlns="http://docbook.org/ns/docbook" version="5.0">
+<bookinfo xmlns="http://docbook.org/ns/docbook" version="5.0">
   <title>Test Book</title>
   <subtitle>It's only a test</subtitle>
 
@@ -11,7 +11,7 @@
 
   <pubdate>2016-01-14</pubdate>
 
-  <copyright xml:id="copyright">
+  <copyright>
     <year>2016</year>
     <holder>Mathias Brossard</holder>
   </copyright>
