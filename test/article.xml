@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xml:id="article" xmlns="http://docbook.org/ns/docbook" version="5.0">
+
+  <!-- Front Matter -->
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="article/articleinfo.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="article/foreword.xml"/>
+
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="content/tables.xml"/>
+
+  <!-- Appendices -->
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="appendix/cc.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="appendix/mit.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="appendix/glossary.xml"/>
+
+  <index/>
+
+</article>

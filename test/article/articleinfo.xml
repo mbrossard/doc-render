@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<articleinfo xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <title>Test Article</title>
+  <subtitle>It's only a test</subtitle>
+
+  <authorgroup>
+    <corpauthor>
+      Mathias Brossard
+    </corpauthor>
+  </authorgroup>
+
+  <pubdate>2016-01-14</pubdate>
+
+  <copyright>
+    <year>2016</year>
+    <holder>Mathias Brossard</holder>
+  </copyright>
+
+  <legalnotice>
+    <para>Copyright 2016 Mathias Brossard</para>
+
+    <para>All rights reserved.</para>
+
+    <para>This article is licensed under a <xref linkend="CC"/>.</para>
+
+    <para>Computer instructions may be extracted from the article under the
+    <xref linkend="MIT"/>.</para>
+
+  </legalnotice>
+
+  <abstract>
+    <para>This article is just a test.</para>
+  </abstract>
+
+</articleinfo>
