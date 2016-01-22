@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xml:id="tables" xreflabel="Tables" xmlns="http://docbook.org/ns/docbook" version="5.0">
+<section xml:id="tables" xreflabel="Tables" xmlns="http://docbook.org/ns/docbook" version="5.0">
 
   <title>Tables</title>
-
   
   <table xml:id="ex.calstable" frame='all'>
     <title>Sample CALS Table</title>
@@ -81,4 +80,4 @@
     </tgroup>
   </table> 
 
-</chapter>
+</section>
