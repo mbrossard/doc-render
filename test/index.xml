@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <book xml:id="book" xmlns="http://docbook.org/ns/docbook" version="5.0">
 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="book/bookinfo.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="book/dedication.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="book/preface.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="book/bookinfo.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="book/dedication.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="book/preface.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/tables.xml"/>
 
   <!-- Appendices -->
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="appendix/cc.xml"/> 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="appendix/mit.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="appendix/glossary.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="appendix/cc.xml"/> 
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="appendix/mit.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="appendix/glossary.xml"/>
 
   <index/>
 
