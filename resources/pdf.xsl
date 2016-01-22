@@ -8,12 +8,10 @@
 
   <!-- The local path to your common customization stylesheet -->
   <xsl:import href="lib/defines.xsl"/>
-  <xsl:import href="lib/defines-a4.xsl"/>
   <xsl:import href="lib/defines-pdf.xsl"/>
   <xsl:import href="lib/placement.xsl"/>
   <xsl:import href="lib/style.xsl"/>
   <xsl:import href="lib/headers-footers.xsl"/>
-  <xsl:import href="lib/titlepage-a4.xsl"/>
   <xsl:import href="lib/tables.xsl"/>
 
 </xsl:stylesheet>
