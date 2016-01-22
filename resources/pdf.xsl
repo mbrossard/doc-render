@@ -7,6 +7,7 @@
   <xsl:import href="docbook-xsl/fo/titlepage.templates.xsl"/>
 
   <!-- The local path to your common customization stylesheet -->
+  <xsl:import href="lib/colors.xsl"/>
   <xsl:import href="lib/defines.xsl"/>
   <xsl:import href="lib/defines-pdf.xsl"/>
   <xsl:import href="lib/headers-footers.xsl"/>
