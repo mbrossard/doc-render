@@ -5,7 +5,8 @@
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="book/dedication.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="book/preface.xml"/>
 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="content/tables.xml"/>
+  <!-- Parts -->
+  <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="content/introduction.xml"/>
 
   <!-- Appendices -->
   <xi:include xmlns:xi="http://www.w3.org/2003/XInclude" href="appendix/cc.xml"/> 
