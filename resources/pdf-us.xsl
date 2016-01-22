@@ -2,19 +2,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format" version="1.0">
 
-  <!-- The local path to DocBook FO stylesheets -->
-  <xsl:import href="docbook-xsl/fo/profile-docbook.xsl"/>
-  <xsl:import href="docbook-xsl/fo/titlepage.templates.xsl"/>
+  <xsl:import href="pdf.xsl"/>
 
-  <!-- The local path to your common customization stylesheet -->
-  <xsl:import href="lib/defines.xsl"/>
   <xsl:import href="lib/defines-us.xsl"/>
-  <xsl:import href="lib/defines-pdf.xsl"/>
-  <xsl:import href="lib/placement.xsl"/>
-  <xsl:import href="lib/style.xsl"/>
-  <xsl:import href="lib/headers-footers.xsl"/>
   <xsl:import href="lib/titlepage-us.xsl"/>
-  <xsl:import href="lib/tables.xsl"/>
 
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
