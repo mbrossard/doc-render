@@ -63,7 +63,9 @@
   <!-- Title page and section style -->
 
   <xsl:attribute-set name="common.title.properties">
-    <!-- <xsl:attribute name="color">#00447A</xsl:attribute> -->
+    <xsl:attribute name="color">
+      <xsl:value-of select="$title.color"/>
+    </xsl:attribute>
     <xsl:attribute name="start-indent">0</xsl:attribute>
     <xsl:attribute name="text-align">left</xsl:attribute>
     <xsl:attribute name="font-size">16pt</xsl:attribute>
@@ -78,7 +80,9 @@
 
   <xsl:attribute-set name="subtitle.style"
     use-attribute-sets="common.title.properties">
-    <xsl:attribute name="color">#F39911</xsl:attribute>
+    <xsl:attribute name="color">
+      <xsl:value-of select="$subtitle.color"/>
+    </xsl:attribute>
     <xsl:attribute name="line-height">150%</xsl:attribute>
   </xsl:attribute-set>
 
@@ -126,7 +130,9 @@
     <xsl:attribute name="font-size">18pt</xsl:attribute>
     <xsl:attribute name="border-top-style">solid</xsl:attribute>
     <xsl:attribute name="border-top-width">2pt</xsl:attribute>
-    <xsl:attribute name="border-top-color">#444444</xsl:attribute>
+    <xsl:attribute name="border-top-color">
+      <xsl:value-of select="$section.level1.ruler.color"/>
+    </xsl:attribute>
     <xsl:attribute name="margin-top">1em</xsl:attribute>
     <xsl:attribute name="padding-left">0.2em</xsl:attribute>
     <xsl:attribute name="padding-top">0.3em</xsl:attribute>
@@ -137,7 +143,9 @@
     <xsl:attribute name="font-size">14pt</xsl:attribute>
     <xsl:attribute name="border-top-style">solid</xsl:attribute>
     <xsl:attribute name="border-top-width">1pt</xsl:attribute>
-    <xsl:attribute name="border-top-color">#bbbbbb</xsl:attribute>
+    <xsl:attribute name="border-top-color">
+      <xsl:value-of select="$section.level2.ruler.color"/>
+    </xsl:attribute>
     <xsl:attribute name="padding-top">0.3em</xsl:attribute>
     <xsl:attribute name="keep-with-next">always</xsl:attribute>
   </xsl:attribute-set>
@@ -146,7 +154,9 @@
     <xsl:attribute name="font-size">12pt</xsl:attribute>
     <xsl:attribute name="border-bottom-style">solid</xsl:attribute>
     <xsl:attribute name="border-bottom-width">0.5pt</xsl:attribute>
-    <xsl:attribute name="border-bottom-color">#eeeeee</xsl:attribute>
+    <xsl:attribute name="border-top-color">
+      <xsl:value-of select="$section.level3.ruler.color"/>
+    </xsl:attribute>
     <xsl:attribute name="keep-with-next">always</xsl:attribute>
   </xsl:attribute-set>
 
@@ -391,8 +401,12 @@
   
   <xsl:param name="table.frame.border.thickness">0.5pt</xsl:param>
   <xsl:param name="table.cell.border.thickness">0.5pt</xsl:param>
-  <xsl:param name="table.frame.border.color">#1b325e</xsl:param>
-  <xsl:param name="table.cell.border.color">#1b325e</xsl:param>
+  <xsl:param name="table.frame.border.color">
+    <xsl:value-of select="$table.border.color"/>
+  </xsl:param>
+  <xsl:param name="table.cell.border.color">
+    <xsl:value-of select="$table.border.color"/>
+  </xsl:param>
   <xsl:param name="table.footnote.number.format" select="1"></xsl:param>
   <xsl:param name="table.frame.border.style">solid</xsl:param>
   <xsl:param name="table.cell.border.style">solid</xsl:param>
