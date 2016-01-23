@@ -7,6 +7,8 @@
   <xsl:import href="lib/defines-a4.xsl"/>
   <xsl:import href="lib/titlepage-a4.xsl"/>
 
+  <xsl:import href="custom/pdf-a4.xsl"/>
+
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
 Local variables:

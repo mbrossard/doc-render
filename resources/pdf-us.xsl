@@ -7,6 +7,8 @@
   <xsl:import href="lib/defines-us.xsl"/>
   <xsl:import href="lib/titlepage-us.xsl"/>
 
+  <xsl:import href="custom/pdf-us.xsl"/>
+
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
 Local variables:
