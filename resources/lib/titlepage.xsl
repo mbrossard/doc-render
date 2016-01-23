@@ -22,7 +22,7 @@
   <!-- Title -->
   <xsl:template match="d:title" mode="book.titlepage.recto.auto.mode">
     <fo:block xsl:use-attribute-sets="book.titlepage.recto.style">
-      <xsl:call-template name="component.title">
+      <xsl:call-template name="division.title">
         <xsl:with-param name="node" select="ancestor-or-self::d:book[1]"/>
       </xsl:call-template>
     </fo:block>
@@ -120,7 +120,7 @@
   <!-- Title -->
   <xsl:template match="d:title" mode="article.titlepage.recto.auto.mode">
     <fo:block xsl:use-attribute-sets="article.titlepage.recto.style">
-      <xsl:call-template name="component.title">
+      <xsl:call-template name="division.title">
         <xsl:with-param name="node" select="ancestor-or-self::d:article[1]"/>
       </xsl:call-template>
     </fo:block>
