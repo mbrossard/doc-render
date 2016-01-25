@@ -94,6 +94,14 @@
     <xsl:attribute name="text-align">left</xsl:attribute>
     <xsl:attribute name="font-size">48pt</xsl:attribute>
   </xsl:attribute-set>
+  
+  <xsl:attribute-set name="book.titlepage.recto.properties">
+    <xsl:attribute name="font-family">
+      <xsl:value-of select="$title.fontset"/>
+    </xsl:attribute>  
+    <xsl:attribute name="font-weight">bold</xsl:attribute>
+    <xsl:attribute name="text-align">left</xsl:attribute>
+  </xsl:attribute-set>
 
   <xsl:attribute-set name="article.titlepage.recto.style">
     <xsl:attribute name="font-family">
@@ -512,9 +520,9 @@
 
     <xsl:variable name="display">
       <xsl:call-template name="display.headers.footers">
-	<xsl:with-param name="pageclass" select="$pageclass"/>
-	<xsl:with-param name="sequence" select="$sequence"/>
-	<xsl:with-param name="gentext-key" select="$gentext-key"/>
+	    <xsl:with-param name="pageclass" select="$pageclass"/>
+	    <xsl:with-param name="sequence" select="$sequence"/>
+	    <xsl:with-param name="gentext-key" select="$gentext-key"/>
       </xsl:call-template>
     </xsl:variable>
 
@@ -522,9 +530,9 @@
       <xsl:when test="$header.rule = 0"><!-- no output --></xsl:when>
       <xsl:when test="$display = 0"><!-- no output --></xsl:when>
       <xsl:otherwise>
-	<xsl:attribute name="border-bottom-width">0.5pt</xsl:attribute>
-	<xsl:attribute name="border-bottom-style">solid</xsl:attribute>
-	<xsl:attribute name="border-bottom-color">#444444</xsl:attribute>
+	    <xsl:attribute name="border-bottom-width">0.5pt</xsl:attribute>
+	    <xsl:attribute name="border-bottom-style">solid</xsl:attribute>
+	    <xsl:attribute name="border-bottom-color">#444444</xsl:attribute>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -536,9 +544,9 @@
 
     <xsl:variable name="display">
       <xsl:call-template name="display.headers.footers">
-	<xsl:with-param name="pageclass" select="$pageclass"/>
-	<xsl:with-param name="sequence" select="$sequence"/>
-	<xsl:with-param name="gentext-key" select="$gentext-key"/>
+	    <xsl:with-param name="pageclass" select="$pageclass"/>
+	    <xsl:with-param name="sequence" select="$sequence"/>
+	    <xsl:with-param name="gentext-key" select="$gentext-key"/>
       </xsl:call-template>
     </xsl:variable>
 
@@ -546,9 +554,9 @@
       <xsl:when test="$footer.rule = 0"><!-- no output --></xsl:when>
       <xsl:when test="$display = 0"><!-- no output --></xsl:when>
       <xsl:otherwise>
-	<xsl:attribute name="border-top-width">0.5pt</xsl:attribute>
-	<xsl:attribute name="border-top-style">solid</xsl:attribute>
-	<xsl:attribute name="border-top-color">#444444</xsl:attribute>
+	    <xsl:attribute name="border-top-width">0.5pt</xsl:attribute>
+	    <xsl:attribute name="border-top-style">solid</xsl:attribute>
+	    <xsl:attribute name="border-top-color">#444444</xsl:attribute>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
