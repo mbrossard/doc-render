@@ -14,6 +14,7 @@
   <xsl:import href="lib/placement.xsl"/>
   <xsl:import href="lib/style.xsl"/>
   <xsl:import href="lib/tables.xsl"/>
+  <xsl:import href="lib/graphics.xsl"/>
 
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
