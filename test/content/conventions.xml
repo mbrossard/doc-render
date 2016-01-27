@@ -22,5 +22,12 @@
       <para>This form of text is used to emphasize important points or
       to give examples.</para>
     </blockquote>
+
+    <para><ulink url="http://www.google.com/"/></para>
+
+    <blockquote>
+      <para>This form of text is used for hypertext links external to
+      external resources.</para>
+    </blockquote>
   </section>
 </section>
