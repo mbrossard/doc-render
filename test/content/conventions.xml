@@ -15,5 +15,12 @@
       <para>This form of text is designed to be typed exactly as seen unless
       otherwise noted in the surrounding text.</para>
     </blockquote>
+
+    <para><emphasis>Emphasis</emphasis></para>
+
+    <blockquote>
+      <para>This form of text is used to emphasize important points or
+      to give examples.</para>
+    </blockquote>
   </section>
 </section>
