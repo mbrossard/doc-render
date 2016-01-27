@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="conventions" xreflabel="Conventions" xmlns="http://docbook.org/ns/docbook" version="5.0">
+
+  <title>Conventions used</title>
+
+  <section>
+    <title>Typographical Conventions</title>
+    
+    <para>The following conventions are used
+    throughout this document. Here are some examples:</para>
+    
+    <screen><userinput>./configure --prefix=/usr</userinput></screen>
+
+    <blockquote>
+      <para>This form of text is designed to be typed exactly as seen unless
+      otherwise noted in the surrounding text.</para>
+    </blockquote>
+  </section>
+</section>
