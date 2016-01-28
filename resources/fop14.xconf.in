@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<fop version="1.0">
+  <base>.</base>
+  <source-resolution>72</source-resolution>
+  <target-resolution>72</target-resolution>
+  
+  <default-page-settings height="11.00in" width="8.50in"/>
+  
+  <renderers>
+    <renderer mime="application/pdf">
+      <filterList>
+        <value>flate</value>
+      </filterList>
+
+      <fonts>
+        <directory recursive="true">%FONT_PATH%</directory>
+        <!-- <auto-detect/> -->
+      </fonts>
+    </renderer>
+  </renderers>
+
+</fop>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->
