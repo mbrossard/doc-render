@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+#
+# (C) Mathias Brossard <mathias@brossard.org>
+
+import subprocess
+import argparse
+import os
+
+resources = os.path.dirname(os.path.realpath(__file__))
+resources = os.path.realpath(resources + "/../resources")
+
+parser = argparse.ArgumentParser()
+subparsers = parser.add_subparsers(title='Subcommands')
+
+parser_pdf = subparsers.add_parser('pdf', help='Render PDF file')
+parser_pdf.set_defaults(cmd="pdf")
+m = parser_pdf.add_argument_group('Arguments')
+m.add_argument('--stylesheet', '-s', help='stylesheet', required=False)
+m.add_argument('--fop', '-f', help='path to fop binary', required=False)
+m.add_argument('--embed', '-e', help='embed fonts', action='count')
+m.add_argument('file', nargs='*', help='input file(s)')
+
+parser_epub = subparsers.add_parser('epub', help='Render EPUB file')
+parser_epub.set_defaults(cmd="epub")
+m = parser_epub.add_argument_group('Arguments')
+m.add_argument('--stylesheet', '-s', help='stylesheet', required=False)
+m.add_argument('file', nargs='*', help='input file(s)')
+
+args = parser.parse_args()
+
+if(args.cmd == "pdf"):
+    style = args.stylesheet if args.stylesheet else "pdf-us.xsl"
+
+    fop = subprocess.check_output([ 'which', 'fop' ]).rstrip()
+    fop_opts = "-Djava.awt.headless=true"
+    os.environ['FOP_OPTS'] = fop_opts
+    with open(resources + "/fop.xconf.in", "r") as f:
+        t = f.read()
+    t = t.replace('%FONT_PATH%', resources + "/fonts")
+
+    xsl = resources + "/" + style
+    for xml in args.file:
+        base = xml.replace('.xml', '')
+        fo = "%s.fo" % base
+        pdf = "%s.pdf" % base
+        cnf = "%s.cnf" % base
+        with open(cnf, "w") as f:
+            f.write(t)
+        subprocess.call([ "xsltproc", "-o", fo, "--xinclude", "--nonet",
+                          "--stringparam", "resources.path", resources,
+                          xsl, xml ])
+        subprocess.call([ fop, "-c", cnf, "-fo", fo, "-pdf", pdf ])
+        os.unlink(cnf)
