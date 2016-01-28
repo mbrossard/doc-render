@@ -34,7 +34,8 @@ if(args.cmd == "pdf"):
     fop = subprocess.check_output([ 'which', 'fop' ]).rstrip()
     fop_opts = "-Djava.awt.headless=true"
     os.environ['FOP_OPTS'] = fop_opts
-    with open(resources + "/fop.xconf.in", "r") as f:
+    c = "fop14.xconf.in" if args.embed else "fop.xconf.in"
+    with open(resources + "/" + c, "r") as f:
         t = f.read()
     t = t.replace('%FONT_PATH%', resources + "/fonts")
 
