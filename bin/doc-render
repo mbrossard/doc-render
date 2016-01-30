@@ -52,3 +52,4 @@ if(args.cmd == "pdf"):
                           xsl, xml ])
         subprocess.call([ fop, "-c", cnf, "-fo", fo, "-pdf", pdf ])
         os.unlink(cnf)
+        os.unlink(fo)
