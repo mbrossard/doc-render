@@ -46,7 +46,10 @@ if(args.cmd == "pdf"):
     elif(os.path.isfile(resources + "/" + style + ".xsl")):
         xsl = resources + "/" + style + ".xsl"
 
-    xsl = resources + "/" + style
+    if not (os.path.isfile(xsl)):
+        print "Unknown stylesheet: '%s'\n" % style
+        exti(-1)
+        
     for xml in args.file:
         base = xml.replace('.xml', '')
         fo = "%s.fo" % base
