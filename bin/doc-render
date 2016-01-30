@@ -38,6 +38,13 @@ if(args.cmd == "pdf"):
     with open(resources + "/" + c, "r") as f:
         t = f.read()
     t = t.replace('%FONT_PATH%', resources + "/fonts")
+    
+    if os.path.isfile(style):
+        xsl = style
+    elif(os.path.isfile(resources + "/" + style)):
+        xsl = resources + "/" + style       
+    elif(os.path.isfile(resources + "/" + style + ".xsl")):
+        xsl = resources + "/" + style + ".xsl"
 
     xsl = resources + "/" + style
     for xml in args.file:
