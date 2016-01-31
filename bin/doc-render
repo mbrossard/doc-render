@@ -63,3 +63,19 @@ if(args.cmd == "pdf"):
         subprocess.call([ fop, "-c", cnf, "-fo", fo, "-pdf", pdf ])
         os.unlink(cnf)
         os.unlink(fo)
+
+if(args.cmd == "epub"):
+    style = args.stylesheet if args.stylesheet else "epub.xsl"
+    xsl = resources + '/' + style
+    for xml in args.file:
+        base = xml.replace('.xml', '')
+        epub = "%s.epub" % base
+        subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", epub ])
+        subprocess.call([ "xsltproc", "--xinclude", "--nonet",
+                          "--stringparam", "resources.path", resources,
+                          xsl, xml ])
+        with open("mimetype", "w") as f:
+            f.write("application/epub+zip")
+        subprocess.call([ "zip", "-0X", epub, "mimetype" ])
+        subprocess.call([ "zip", "-r9DX", epub, "OEBPS", "META-INF" ])
+        subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", "mimetype" ])
