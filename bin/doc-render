@@ -23,6 +23,7 @@ m.add_argument('file', nargs='*', help='input file(s)')
 parser_epub = subparsers.add_parser('epub', help='Render EPUB file')
 parser_epub.set_defaults(cmd="epub")
 m = parser_epub.add_argument_group('Arguments')
+m.add_argument('--epub3', '-3', help='use EPUB3', action='count')
 m.add_argument('--stylesheet', '-s', help='stylesheet', required=False)
 m.add_argument('file', nargs='*', help='input file(s)')
 
@@ -65,17 +66,21 @@ if(args.cmd == "pdf"):
         os.unlink(fo)
 
 if(args.cmd == "epub"):
-    style = args.stylesheet if args.stylesheet else "epub.xsl"
+    style = args.stylesheet if args.stylesheet else ("epub3.xsl" if args.epub3 else "epub.xsl")
     xsl = resources + '/' + style
     for xml in args.file:
         base = xml.replace('.xml', '')
         epub = "%s.epub" % base
         subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", epub ])
-        subprocess.call([ "xsltproc", "--xinclude", "--nonet",
-                          "--stringparam", "resources.path", resources,
-                          xsl, xml ])
-        with open("mimetype", "w") as f:
-            f.write("application/epub+zip")
+        cmd = ([ "xsltproc", "--xinclude", "--nonet",
+                 "--stringparam", "resources.path", resources ] +
+               ([ "--stringparam", "base.dir", "OEBPS" ] if args.epub3 else []) +
+               [ xsl, xml ])
+        subprocess.call(cmd)
+
+        if not args.epub3:
+            with open("mimetype", "w") as f:
+                f.write("application/epub+zip")
         subprocess.call([ "zip", "-0X", epub, "mimetype" ])
         subprocess.call([ "zip", "-r9DX", epub, "OEBPS", "META-INF" ])
         subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", "mimetype" ])
