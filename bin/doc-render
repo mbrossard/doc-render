@@ -53,6 +53,10 @@ if(args.cmd == "pdf"):
         exti(-1)
         
     for xml in args.file:
+        os.chdir(cwd)
+        xml = os.path.realpath(xml)
+        os.chdir(os.path.dirname(xml))
+        xml = os.path.basename(xml)
         base = xml.replace('.xml', '')
         fo = "%s.fo" % base
         pdf = "%s.pdf" % base
