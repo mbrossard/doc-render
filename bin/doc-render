@@ -74,6 +74,10 @@ if(args.cmd == "epub"):
     style = args.stylesheet if args.stylesheet else ("epub3.xsl" if args.epub3 else "epub.xsl")
     xsl = resources + '/' + style
     for xml in args.file:
+        os.chdir(cwd)
+        xml = os.path.realpath(xml)
+        os.chdir(os.path.dirname(xml))
+        xml = os.path.basename(xml)
         base = xml.replace('.xml', '')
         epub = "%s.epub" % base
         subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", epub ])
