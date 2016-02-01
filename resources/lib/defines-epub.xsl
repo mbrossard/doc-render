@@ -11,6 +11,8 @@
   <xsl:param name="default.image.width">12cm</xsl:param>
   <xsl:param name="default.table.width">100%</xsl:param>
 
+  <xsl:param name="keep.relative.image.uris">0</xsl:param>
+  
   <!-- TODO Test if this is necessary -->
   <xsl:param name="page.margin.top">1.0cm</xsl:param>
   <xsl:param name="page.margin.bottom">1.5cm</xsl:param>
