@@ -28,6 +28,7 @@ m.add_argument('--stylesheet', '-s', help='stylesheet', required=False)
 m.add_argument('file', nargs='*', help='input file(s)')
 
 args = parser.parse_args()
+cwd = os.getcwd()
 
 if(args.cmd == "pdf"):
     style = args.stylesheet if args.stylesheet else "pdf-us.xsl"
