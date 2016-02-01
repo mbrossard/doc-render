@@ -87,6 +87,16 @@ if(args.cmd == "epub"):
                [ xsl, xml ])
         subprocess.call(cmd)
 
+        with open("OEBPS/" + ("package.opf" if args.epub3 else "content.opf"), "r") as f:
+            content = f.read()
+
+        m = re.search(r'<item id="[^"]+" href="([^"]+)" media-type="image/[^"]+"/>', content)
+        print m.groups()
+        for img in m.groups():
+            d = "OEBPS/" + os.path.dirname(img)
+            os.makedirs(d)
+            shutil.copy(img, d)
+
         if not args.epub3:
             with open("mimetype", "w") as f:
                 f.write("application/epub+zip")
