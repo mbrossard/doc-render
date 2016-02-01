@@ -85,3 +85,5 @@ if(args.cmd == "epub"):
         subprocess.call([ "zip", "-0X", epub, "mimetype" ])
         subprocess.call([ "zip", "-r9DX", epub, "OEBPS", "META-INF" ])
         subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", "mimetype" ])
+
+os.chdir(cwd)
