@@ -5,6 +5,7 @@
 import subprocess
 import argparse
 import os
+import re
 
 resources = os.path.dirname(os.path.realpath(__file__))
 resources = os.path.realpath(resources + "/../resources")
