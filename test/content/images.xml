@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="images" xreflabel="Images" xmlns="http://docbook.org/ns/docbook" version="5.0">
+
+  <title>Images</title>
+
+  <mediaobject> 
+    <imageobject>
+      <imagedata width="10cm"  contentwidth="8cm"  
+                 depth="10cm"  contentdepth="8cm"  
+                 align="center" valign="middle"
+                 fileref="come_to_the_dark_side.jpg"/> 
+    </imageobject> 
+  </mediaobject> 
+</section>
