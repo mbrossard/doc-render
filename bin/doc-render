@@ -94,6 +94,9 @@ if(args.cmd == "epub"):
         m = re.search(r'<item id="[^"]+" href="([^"]+)" media-type="image/[^"]+"/>', content)
         print m.groups()
         for img in m.groups():
+            if re.search(r'^[.][.]', img) or re.search(r'^/', img):
+                print "Path like %s are not supported"
+                continue
             d = "OEBPS/" + os.path.dirname(img)
             os.makedirs(d)
             shutil.copy(img, d)
