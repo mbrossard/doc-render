@@ -5,9 +5,12 @@
   <!-- The local path to DocBook Epub stylesheets -->
   <xsl:import href="docbook-xsl/epub/docbook.xsl"/>
 
-  <!-- The local path to your common customization stylesheet -->
+  <!-- The local path to common customization stylesheet -->
   <xsl:import href="lib/defines.xsl"/>
   <xsl:import href="lib/defines-epub.xsl"/>
+
+  <!-- The path to local customization stylesheet -->
+  <xsl:import href="custom/epub.xsl"/>
 
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
