@@ -32,6 +32,7 @@ m.add_argument('file', nargs='*', help='input file(s)')
 parser_html = subparsers.add_parser('html', help='Render HTML file')
 parser_html.set_defaults(cmd="html")
 m = parser_html.add_argument_group('Arguments')
+m.add_argument('--single', help='output single page', action='count')
 m.add_argument('--stylesheet', '-s', help='stylesheet', required=False)
 m.add_argument('file', nargs='*', help='input file(s)')
 
@@ -116,7 +117,7 @@ if(args.cmd == "epub"):
         subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", "mimetype" ])
 
 if(args.cmd == "html"):
-    style = args.stylesheet if args.stylesheet else "html.xsl"
+    style = args.stylesheet if args.stylesheet else ("html-single.xsl" if args.single else "html.xsl")
     xsl = resources + '/' + style
     for xml in args.file:
         os.chdir(cwd)
@@ -124,7 +125,10 @@ if(args.cmd == "html"):
         os.chdir(os.path.dirname(xml))
         xml = os.path.basename(xml)
         base = xml.replace('.xml', '')
-        html = "%s_html" % base
+        if args.single:
+            html = "%s.html" % base
+        else:
+            html = "%s_html" % base
         subprocess.call([ "rm", "-rf", html ])
         cmd = ([ "xsltproc", "--xinclude", "--nonet",
                  "--stringparam", "resources.path", resources ] +
