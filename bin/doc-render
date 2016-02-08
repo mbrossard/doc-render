@@ -29,6 +29,12 @@ m.add_argument('--epub3', '-3', help='use EPUB3', action='count')
 m.add_argument('--stylesheet', '-s', help='stylesheet', required=False)
 m.add_argument('file', nargs='*', help='input file(s)')
 
+parser_html = subparsers.add_parser('html', help='Render HTML file')
+parser_html.set_defaults(cmd="html")
+m = parser_html.add_argument_group('Arguments')
+m.add_argument('--stylesheet', '-s', help='stylesheet', required=False)
+m.add_argument('file', nargs='*', help='input file(s)')
+
 args = parser.parse_args()
 cwd = os.getcwd()
 
@@ -108,5 +114,22 @@ if(args.cmd == "epub"):
         subprocess.call([ "zip", "-0X", epub, "mimetype" ])
         subprocess.call([ "zip", "-r9DX", epub, "OEBPS", "META-INF" ])
         subprocess.call([ "rm", "-rf", "META-INF", "OEBPS", "mimetype" ])
+
+if(args.cmd == "html"):
+    style = args.stylesheet if args.stylesheet else "html.xsl"
+    xsl = resources + '/' + style
+    for xml in args.file:
+        os.chdir(cwd)
+        xml = os.path.realpath(xml)
+        os.chdir(os.path.dirname(xml))
+        xml = os.path.basename(xml)
+        base = xml.replace('.xml', '')
+        html = "%s_html" % base
+        subprocess.call([ "rm", "-rf", html ])
+        cmd = ([ "xsltproc", "--xinclude", "--nonet",
+                 "--stringparam", "resources.path", resources ] +
+               ([ "--output", html ] if args.single else [ "--stringparam", "base.dir", html ]) +
+               [ xsl, xml ])
+        subprocess.call(cmd)
 
 os.chdir(cwd)
