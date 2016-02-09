@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <fop version="1.0">
   <base>.</base>
-  <source-resolution>72</source-resolution>
-  <target-resolution>72</target-resolution>
+  <source-resolution>600</source-resolution>
+  <target-resolution>600</target-resolution>
   
   <default-page-settings height="11.00in" width="8.50in"/>
   
