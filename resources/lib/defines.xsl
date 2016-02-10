@@ -17,17 +17,17 @@
   <!-- ***************  Processor Extensions  *********************  -->
   <!-- ***************************************************  -->
   <!--
-       If non-zero, FOP extensions will be used. At present, this
-       consists of PDF bookmarks. This parameter can also affect which
-       graphics file formats are supported.
+      If non-zero, FOP extensions will be used. At present, this
+      consists of PDF bookmarks. This parameter can also affect which
+      graphics file formats are supported.
   -->
   <xsl:param name="fop.extensions" select="0"></xsl:param>
   <xsl:param name="fop1.extensions" select="1"></xsl:param>
 
   <!--
-        If non-zero, extensions may be used. Each extension is further
-        controlled by its own parameter. But if use.extensions is
-        zero, no extensions will be used.
+      If non-zero, extensions may be used. Each extension is further
+      controlled by its own parameter. But if use.extensions is
+      zero, no extensions will be used.
   -->
   <xsl:param name="use.extensions" select="'1'"></xsl:param>
   <xsl:param name="axf.extensions">0</xsl:param>
@@ -35,7 +35,7 @@
   <xsl:param name="tablecolumns.extension">1</xsl:param>
 
   <!--
-        Profiling tricks
+      Profiling tricks
   -->
   <xsl:variable name="profile.vendor">
     <xsl:if test="//@vendor">
