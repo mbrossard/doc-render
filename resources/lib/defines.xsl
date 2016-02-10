@@ -5,7 +5,7 @@
   <xsl:param name="chunker.output.encoding">UTF-8</xsl:param>
   <xsl:param name="use.role.for.mediaobject">1</xsl:param>
   <xsl:param name="show.comments" select="0"/>
-  <xsl:param name="resources.path">/opt/local/share/doc-render/images</xsl:param>
+  <xsl:param name="resources.path">images</xsl:param>
 
   <!-- Localisation and customized templates -->
   <xsl:param name="local.l10n.xml" select="document('../local.l10n.xml')"/>
