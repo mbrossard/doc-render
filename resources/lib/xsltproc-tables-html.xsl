@@ -34,33 +34,33 @@
 
     <table>
       <xsl:if test="$no.table.summary != 1">
-      <xsl:choose>
-        <!-- If there's a textobject/phrase for the table summary, use it -->
-        <xsl:when test="../d:textobject/d:phrase">
-          <xsl:attribute name="summary">
-            <xsl:value-of select="../d:textobject/d:phrase"/>
-          </xsl:attribute>
-        </xsl:when>
+        <xsl:choose>
+          <!-- If there's a textobject/phrase for the table summary, use it -->
+          <xsl:when test="../d:textobject/d:phrase">
+            <xsl:attribute name="summary">
+              <xsl:value-of select="../d:textobject/d:phrase"/>
+            </xsl:attribute>
+          </xsl:when>
 
-        <!-- If there's a <?dbhtml table-summary="foo"?> PI, use it for
-             the HTML table summary attribute -->
-        <xsl:when test="$summary != ''">
-          <xsl:attribute name="summary">
-            <xsl:value-of select="$summary"/>
-          </xsl:attribute>
-        </xsl:when>
+          <!-- If there's a <?dbhtml table-summary="foo"?> PI, use it for
+               the HTML table summary attribute -->
+          <xsl:when test="$summary != ''">
+            <xsl:attribute name="summary">
+              <xsl:value-of select="$summary"/>
+            </xsl:attribute>
+          </xsl:when>
 
-        <!-- Otherwise, if there's a title, use that -->
-        <xsl:when test="../d:title">
-          <xsl:attribute name="summary">
-            <!-- This screws up on inline markup and footnotes, oh well... -->
-            <xsl:value-of select="string(../d:title)"/>
-          </xsl:attribute>
-        </xsl:when>
+          <!-- Otherwise, if there's a title, use that -->
+          <xsl:when test="../d:title">
+            <xsl:attribute name="summary">
+              <!-- This screws up on inline markup and footnotes, oh well... -->
+              <xsl:value-of select="string(../d:title)"/>
+            </xsl:attribute>
+          </xsl:when>
 
-        <!-- Otherwise, forget the whole idea -->
-        <xsl:otherwise><!-- nevermind --></xsl:otherwise>
-      </xsl:choose>
+          <!-- Otherwise, forget the whole idea -->
+          <xsl:otherwise><!-- nevermind --></xsl:otherwise>
+        </xsl:choose>
       </xsl:if>
 
       <xsl:if test="$cellspacing != '' or $html.cellspacing != ''">

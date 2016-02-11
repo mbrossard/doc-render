@@ -51,7 +51,7 @@
                the HTML table summary attribute -->
           <xsl:when test="$summary != ''">
             <xsl:attribute name="summary">
-            <xsl:value-of select="$summary"/>
+              <xsl:value-of select="$summary"/>
             </xsl:attribute>
           </xsl:when>
           
