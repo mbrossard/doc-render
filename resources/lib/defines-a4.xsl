@@ -5,10 +5,10 @@
   <!-- ***************  Paper size  *********************  -->
   <!-- ***************************************************  -->
   <!--
-        Select the paper type. The paper type is a convenient way to
-        specify the paper size. The list of known paper sizes includes
-        USletter and most of the A, B, and C sizes. See
-        page.width.portrait, for example.
+      Select the paper type. The paper type is a convenient way to
+      specify the paper size. The list of known paper sizes includes
+      USletter and most of the A, B, and C sizes. See
+      page.width.portrait, for example.
   -->
   <xsl:param name="paper.type" select="'A4'"></xsl:param>
 
