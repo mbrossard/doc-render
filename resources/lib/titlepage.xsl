@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:fo="http://www.w3.org/1999/XSL/Format"
-  xmlns:d="http://docbook.org/ns/docbook"
-  xmlns:exsl="http://exslt.org/common"
-  exclude-result-prefixes="exsl d"
-  version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:d="http://docbook.org/ns/docbook"
+                xmlns:exsl="http://exslt.org/common"
+                exclude-result-prefixes="exsl d"
+                version="1.0">
 
   <!-- ***************  Book  *********************  -->
 
@@ -210,16 +209,16 @@
       <xsl:apply-templates mode="titlepage.mode"/>
 
       <xsl:if test="following-sibling::d:subtitle
-	|following-sibling::d:info/d:subtitle
-	|following-sibling::d:bookinfo/d:subtitle
-	|following-sibling::d:articleinfo/d:subtitle">
-	<xsl:text>: </xsl:text>
+                    |following-sibling::d:info/d:subtitle
+                    |following-sibling::d:bookinfo/d:subtitle
+                    |following-sibling::d:articleinfo/d:subtitle">
+        <xsl:text>: </xsl:text>
 
-	<xsl:apply-templates select="(following-sibling::d:subtitle
-	  |following-sibling::d:info/d:subtitle
-	  |following-sibling::d:bookinfo/d:subtitle
-	  |following-sibling::d:articleinfo/d:subtitle)[1]"
-	  mode="verso.subtitle.mode"/>
+        <xsl:apply-templates select="(following-sibling::d:subtitle
+                                     |following-sibling::d:info/d:subtitle
+                                     |following-sibling::d:bookinfo/d:subtitle
+                                     |following-sibling::d:articleinfo/d:subtitle)[1]"
+                             mode="verso.subtitle.mode"/>
       </xsl:if>
     </fo:block>
   </xsl:template>
@@ -229,13 +228,13 @@
     <xsl:if test="following-sibling::d:subtitle">
       <xsl:text>: </xsl:text>
       <xsl:apply-templates select="following-sibling::d:subtitle[1]"
-	mode="verso.subtitle.mode"/>
+                           mode="verso.subtitle.mode"/>
     </xsl:if>
   </xsl:template>
 
   <xsl:template match="d:title" mode="common.titlepage.verso.auto.mode">
     <fo:block xsl:use-attribute-sets="verso.style"
-      font-size="12pt" font-weight="bold" font-family="{$title.fontset}">
+              font-size="12pt" font-weight="bold" font-family="{$title.fontset}">
       <xsl:call-template name="common.verso.title"/>
     </fo:block>
   </xsl:template>
@@ -252,11 +251,11 @@
       <!--
           <xsl:text>Release Date: </xsl:text>
           <xsl:call-template name="svn.escape">
-	      <xsl:with-param name="node">
+          <xsl:with-param name="node">
       -->
-	  <xsl:apply-templates/>
+      <xsl:apply-templates/>
       <!--
-	      </xsl:with-param>
+          </xsl:with-param>
           </xsl:call-template>
       -->
     </fo:block>
@@ -268,16 +267,15 @@
       <!--
           <xsl:text>Revision: </xsl:text>
           <xsl:call-template name="svn.escape">
-	      <xsl:with-param name="node">
+          <xsl:with-param name="node">
       -->
-	  <xsl:apply-templates/>
+      <xsl:apply-templates/>
       <!--
-	      </xsl:with-param>
+          </xsl:with-param>
           </xsl:call-template>
       -->
     </fo:block>
   </xsl:template>
-
 </xsl:stylesheet>
 <!-- Keep this comment at the end of the file
 Local variables:
