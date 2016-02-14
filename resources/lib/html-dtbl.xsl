@@ -300,3 +300,10 @@
   </xsl:template>
 
 </xsl:stylesheet>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: xml
+sgml-indent-step:2
+sgml-indent-data:t
+End:
+-->
