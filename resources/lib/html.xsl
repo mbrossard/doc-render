@@ -28,7 +28,7 @@
 
     <xsl:if test="$html.stylesheet != ''">
       <xsl:call-template name="output.html.stylesheets">
-	<xsl:with-param name="stylesheets" select="normalize-space($html.stylesheet)"/>
+        <xsl:with-param name="stylesheets" select="normalize-space($html.stylesheet)"/>
       </xsl:call-template>
     </xsl:if>
 
@@ -44,10 +44,10 @@
 
     <xsl:if test="($draft.mode = 'yes' or ($draft.mode = 'maybe' and ancestor-or-self::*[@status][1]/@status = 'draft')) and $draft.watermark.image != ''">
       <style type="text/css"><xsl:text>
-	  body { background-image: url('</xsl:text><xsl:value-of select="$draft.watermark.image"/><xsl:text>');
-	    background-repeat: repeat-y;
-	    background-position: top center;
-	  }</xsl:text>
+        body { background-image: url('</xsl:text><xsl:value-of select="$draft.watermark.image"/><xsl:text>');
+        background-repeat: repeat-y;
+        background-position: top center;
+        }</xsl:text>
       </style>
     </xsl:if>
     <xsl:apply-templates select="." mode="head.keywords.content"/>
@@ -57,23 +57,23 @@
     <xsl:param name="this.node" select="."/>
     <div class="breadcrumbs">
       <xsl:for-each select="$this.node/ancestor::*[parent::*]">
-	<!-- <xsl:for-each select="$this.node/ancestor::*"> -->
-	<span class="breadcrumb-link">
-	  <a>
-	    <xsl:attribute name="href">
-	      <xsl:call-template name="href.target">
-		<xsl:with-param name="object" select="."/>
-		<xsl:with-param name="context" select="$this.node"/>
-	      </xsl:call-template>
-	    </xsl:attribute>
-	    <xsl:apply-templates select="." mode="title.markup"/>
-	  </a>
-	</span>
-	<xsl:text> &#187; </xsl:text>
+        <!-- <xsl:for-each select="$this.node/ancestor::*"> -->
+        <span class="breadcrumb-link">
+          <a>
+            <xsl:attribute name="href">
+              <xsl:call-template name="href.target">
+                <xsl:with-param name="object" select="."/>
+                <xsl:with-param name="context" select="$this.node"/>
+              </xsl:call-template>
+            </xsl:attribute>
+            <xsl:apply-templates select="." mode="title.markup"/>
+          </a>
+        </span>
+        <xsl:text> &#187; </xsl:text>
       </xsl:for-each>
       <!-- And display the current node, but not as a link -->
       <span class="breadcrumb-node">
-	<xsl:apply-templates select="$this.node" mode="title.markup"/>
+        <xsl:apply-templates select="$this.node" mode="title.markup"/>
       </span>
     </div>
   </xsl:template>
