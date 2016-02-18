@@ -142,4 +142,6 @@ if(args.cmd == "html"):
                [ xsl, xml ])
         subprocess.call(cmd)
 
+if(args.cmd == "webhelp"):
+    style = args.stylesheet if args.stylesheet else resources + "/webhelp.xsl"
 os.chdir(cwd)
