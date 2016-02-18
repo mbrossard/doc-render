@@ -144,4 +144,9 @@ if(args.cmd == "html"):
 
 if(args.cmd == "webhelp"):
     style = args.stylesheet if args.stylesheet else resources + "/webhelp.xsl"
+    for xml in args.file:
+        os.chdir(cwd)
+        xml = os.path.realpath(xml)
+        os.chdir(os.path.dirname(xml))
+        xml = os.path.basename(xml)
 os.chdir(cwd)
