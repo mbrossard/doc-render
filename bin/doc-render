@@ -149,4 +149,8 @@ if(args.cmd == "webhelp"):
         xml = os.path.realpath(xml)
         os.chdir(os.path.dirname(xml))
         xml = os.path.basename(xml)
+        base = xml.replace('.xml', '')
+        out = "%s_webhelp" % base
+        build = "%s.build.xml" % base
+        subprocess.call([ "rm", "-rf", out ])
 os.chdir(cwd)
