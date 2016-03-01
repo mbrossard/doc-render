@@ -153,4 +153,26 @@ if(args.cmd == "webhelp"):
         out = "%s_webhelp" % base
         build = "%s.build.xml" % base
         subprocess.call([ "rm", "-rf", out ])
+
+        with open("build.properties", "w") as f:
+            f.write("input-xml=" + xml + "\n" +
+                    "output-dir=" + out + "\n" +
+                    "docbook.xsl.dir=" + resources + "/docbook-xsl\n" +
+                    "stylesheet-path=" + style + "\n" +
+                    "template.dir=" + resources + "/docbook-xsl/webhelp/template\n" +
+                    "input-images-dirs=images/**\n" +
+                    "xslt-processor-classpath=" + resources + "/docbook-xsl/extensions/saxon-65.jar \n" +
+                    "xercesImpl.jar=" + resources + "/docbook-xsl/tools/lib/xercesImpl.jar\n" +
+                    "xml-apis.jar=" + resources + "/docbook-xsl/tools/lib/xml-apis.jar\n" +
+                    "validate-against-dtd=false\n" +
+                    "html.extension=html\n" +
+                    "webhelp.include.search.tab=true\n" +
+                    "webhelp.indexer.language=en\n" +
+                    "enable.stemming=true\n" +
+                    "admon.graphics=0\n" +
+                    "suppress.footer.navigation=0\n" +
+                    "indexer-excluded-files=\n")
+        subprocess.call([ "cp", resources + "/build.xml", build ])
+        subprocess.call([ "ant", "-f", build, "webhelp" ])
+
 os.chdir(cwd)
